@@ -14,7 +14,7 @@ const app = express();
 app.use(cookieParser());
 app.use(cors(
     {
-        origin: process.env.FRONTEND_URL,
+         origin: ['http://localhost:3000', 'https://plant-selling-ecommerce.vercel.app', 'https://plant-selling-ecommerce-177vpa9o8-aaditya-ajjus-projects.vercel.app'],
         methods: ['GET', 'POST', 'PATCH', 'DELETE'],
         credentials: true,
         allowedHeaders: ['Content-Type', 'Authorization', 'Accept']
