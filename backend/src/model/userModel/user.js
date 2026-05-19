@@ -106,9 +106,6 @@ userSchema.methods.generateAuthToken = async function () {
 
         // Encrypt the refresh token for sending to client
         const encryptedRefreshToken = encryptMessage(refreshToken);
-        
-        console.log("Raw Refresh Token (JWT):", refreshToken);
-        console.log("Encrypted Refresh Token Object:", encryptedRefreshToken);
 
         if (!encryptedRefreshToken || !encryptedRefreshToken.encryptedMessage || !encryptedRefreshToken.iv) {
             throw new Error("Failed to encrypt refresh token");
