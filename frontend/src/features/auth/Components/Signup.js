@@ -29,11 +29,11 @@ function Signup() {
 
     useEffect(() => {
         if (isError || errorData) {
-            setUserFormData({ ...userFormData, password: "", confirmPassword: "" });
+            setUserFormData(prev => ({ ...prev, password: "", confirmPassword: "" }));
         }
 
         return () => dispatch(resetState());
-    }, [userSignup, errorData, isError]);
+    }, [dispatch, errorData, isError]);
 
     let name, value;
     const handleInputs = (e) => {

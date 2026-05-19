@@ -27,11 +27,12 @@ function Cart() {
   useEffect(() => {
     dispatch(clearIsSessionError());
     dispatch(cartDataFetchAsync());
+  // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [])
 
   useEffect(() => {
        user && (addressList ?? dispatch(addressListDataFetchAsync()))
-  }, [dispatch, user]);
+  }, [dispatch, user, addressList]);
 
   useEffect(() => {
     dispatch(setCartPricing(cart));

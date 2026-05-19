@@ -14,6 +14,7 @@ const NurseryPublicViewMain = ({nurseryPublicStore, currentTabDynamic, isCurrent
 
     useEffect(() => {
         nurseryStoreTemplates && nurseryStoreTemplates.length === 0 && dispatch(nurseryPublicStoreGetPublishTemplates({nurseryId: nurseryPublicStore._id, nurseryTabId: currentTabDynamic._id}));
+    // eslint-disable-next-line react-hooks/exhaustive-deps
     }, []);
 
     return (

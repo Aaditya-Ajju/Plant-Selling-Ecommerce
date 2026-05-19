@@ -18,6 +18,7 @@ const NurseryTabsPublicView = ({ content, isCurrentTab, currentTabDynamic }) => 
 
     useEffect(() => {
         dispatch(nurseryPublicStoreGetPublishBlocks({nurseryId: currentTabDynamic.nursery, nurseryTabId: currentTabDynamic._id}));
+    // eslint-disable-next-line react-hooks/exhaustive-deps
     }, [nurseryPublicStoreGetPublishBlocks]);
 
     const renderContents = content && content.map((elem) => {

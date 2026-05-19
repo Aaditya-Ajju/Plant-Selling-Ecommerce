@@ -38,6 +38,7 @@ const Success = () => {
 
     useEffect(() => {
         handelUpdateOrderAfterConfirmPayment();
+    // eslint-disable-next-line react-hooks/exhaustive-deps
     }, []);
 
     return (

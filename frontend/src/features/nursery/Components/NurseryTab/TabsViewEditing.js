@@ -6,9 +6,8 @@ import TemplateTwoSectionAndRightVertical from '../Templates/TemplateTwoSectionA
 import TemplateTwoSectionAndRightFour from '../Templates/TemplateTwoSectionAndRightFour';
 import TemplateTwoSectionAndLeftVertical from '../Templates/TemplateTwoSectionAndLeftVertical';
 import TemplateTwoSectionAndLeftFour from '../Templates/TemplateTwoSectionAndLeftFour';
-import { completeSection, fourSection, twoSection, twoSectionAndLeftFour, twoSectionAndLeftVertical, twoSectionAndRightFour, twoSectionAndRightVertical } from '../utils/templatesAPI';
 import { useDispatch, useSelector } from 'react-redux';
-import { AddNurseryStoreTemplatesAsync, changeTemplateRenderPositionAsync, deleteNurseryStoreTemplatesAsync, deleteTabSectionAsync, deleteTemplateFromSectionAsync, nurseryStoreImagesUpload, nurseryStoreTabDeleteAsync, nurseryStoreTabEditAsync, nurseryStoreTemplatesChangeRenderPositionByTabsIdAsync } from '../../nurserySlice';
+import { AddNurseryStoreTemplatesAsync, deleteNurseryStoreTemplatesAsync, nurseryStoreTabDeleteAsync, nurseryStoreTabEditAsync, nurseryStoreTemplatesChangeRenderPositionByTabsIdAsync } from '../../nurserySlice';
 import ChooseTemplate from '../../../common/ChooseTemplate';
 import { message, Tooltip } from 'antd';
 import AddBlocksModel from '../Blocks/AddBlocksModel';
@@ -31,7 +30,7 @@ const TabsViewEditing = ({ content, status }) => {
     const [isModelOpenEdit, setIsModelOpenEdit] = useState(false);
 
     //^ Ant Design Tooltip 
-    const [arrow, setArrow] = useState('Show');
+    const [arrow] = useState('Show');
     const mergedArrow = useMemo(() => {
         if (arrow === 'Hide') {
             return false;
@@ -102,7 +101,7 @@ const TabsViewEditing = ({ content, status }) => {
     const handelChangeRenderPosition = async (prev, next) => {
 
         //! if we move two or more steps up and down, to change the positions 
-        if (!prev || !next || Math.abs(prev.index - next.index) != 1) {
+        if (!prev || !next || Math.abs(prev.index - next.index) !== 1) {
             message.error("Invalid Change Render Position");
             return;
         }

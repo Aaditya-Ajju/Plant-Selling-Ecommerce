@@ -1,6 +1,5 @@
 import React, { useEffect } from 'react'
-import { Link, useNavigate, useParams } from 'react-router-dom'
-import formatTimestamp from '../../../utils/formatTimestamp'
+import { Link, useParams } from 'react-router-dom'
 import { useDispatch, useSelector } from 'react-redux'
 import { getOrderDetailsByIdAsync } from '../orderSlice'
 
@@ -23,6 +22,7 @@ const OrderDetails = () => {
 
     useEffect(() => {
         handelGetOrderDetails();
+    // eslint-disable-next-line react-hooks/exhaustive-deps
     }, []);
 
     return (

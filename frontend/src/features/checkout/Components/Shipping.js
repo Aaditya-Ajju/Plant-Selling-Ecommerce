@@ -56,14 +56,17 @@ const Shipping = () => {
             message.error(isSessionError.message);
             navigate("/");
         }
+    // eslint-disable-next-line react-hooks/exhaustive-deps
     }, [isSessionError]);
 
     useEffect(() => {
         addressList ?? dispatch(addressListDataFetchAsync());
+    // eslint-disable-next-line react-hooks/exhaustive-deps
     }, [addressList]);
 
     useEffect(() =>{
         !selectedAddress && handelGetSelectedAddress();
+    // eslint-disable-next-line react-hooks/exhaustive-deps
     }, [selectedAddress]);
 
     const stepsOptions = [

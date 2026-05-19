@@ -1,6 +1,6 @@
 import React from 'react';
 import { useDispatch, useSelector } from 'react-redux';
-import { Tooltip } from 'antd';
+
 import TemplateCompleteSectionSaved from '../TemplatesSaved/TemplateCompleteSectionSaved';
 import TemplateTwoSectionSaved from '../TemplatesSaved/TemplateTwoSectionSaved';
 import TemplateFourSectionSaved from '../TemplatesSaved/TemplateFourSectionSaved';

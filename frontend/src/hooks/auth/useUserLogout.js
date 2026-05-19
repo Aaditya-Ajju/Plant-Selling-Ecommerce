@@ -1,4 +1,4 @@
-import { useEffect, useMemo } from 'react'
+import { useEffect, useMemo } from 'react';
 import useAuthData from './useAuthData';
 
 const useUserLogout = () => {

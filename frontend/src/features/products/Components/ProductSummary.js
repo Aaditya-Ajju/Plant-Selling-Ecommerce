@@ -30,7 +30,7 @@ const ProductSummary = () => {
         if (user) {
             addressList ?? dispatch(addressListDataFetchAsync());
         }
-    }, [dispatch, user])
+    }, [dispatch, user, addressList])
 
     useEffect(() => {
         addressList?.length && dispatch(setSelectedAddress(addressList[0]));
@@ -45,6 +45,7 @@ const ProductSummary = () => {
     useEffect(() => {
         const pricing = handelCalculatePricing(cartQuantity, product);
         dispatch(calculateProductPricing(pricing));
+    // eslint-disable-next-line react-hooks/exhaustive-deps
     }, [product, cartQuantity])
 
     const handelChangeQuantity = (e) => {

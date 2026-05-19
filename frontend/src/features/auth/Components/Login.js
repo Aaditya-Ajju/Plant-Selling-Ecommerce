@@ -1,8 +1,7 @@
-import { useEffect, useRef, useState } from 'react';
+import { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
 import { message } from 'antd';
 import useUserLogin from '../../../hooks/auth/useUserLogin';
-import useUserData from '../../../hooks/useUserData';
 import { useDispatch } from 'react-redux';
 import { resetState } from '../authSlice';
 // import { setCart } from '../../cart/cartSlice'; // TODO: IMPLEMENTATION: CART FUNCTIONALITY
@@ -20,11 +19,11 @@ function Login() {
 
     useEffect(() => {
         if (isError || errorData) {
-            setUserFormData({ ...userFormData, password: "" })
+            setUserFormData(prev => ({ ...prev, password: "" }));
         }
 
         return () => dispatch(resetState());
-    }, [userLogin, errorData, isError]);
+    }, [dispatch, errorData, isError]);
 
     let name, value;
     const handleInputs = (e) => {

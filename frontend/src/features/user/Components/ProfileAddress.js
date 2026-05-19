@@ -12,7 +12,7 @@ const ProfileAddress = () => {
     useEffect(() => {
         addressList ?? dispatch(addressListDataFetchAsync());
         addressList?.length && setAddress(addressList[0]);
-    }, [addressList])
+    }, [addressList, dispatch])
 
     return (
         <div className="col-md-12">

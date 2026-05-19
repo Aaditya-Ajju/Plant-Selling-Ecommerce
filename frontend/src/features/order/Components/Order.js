@@ -33,6 +33,7 @@ const Order = () => {
         }
 
         dispatch(getOrderHistoryAsync(data));
+    // eslint-disable-next-line react-hooks/exhaustive-deps
     }, [])
 
     const itemRender = (_, type, originalElement) => {

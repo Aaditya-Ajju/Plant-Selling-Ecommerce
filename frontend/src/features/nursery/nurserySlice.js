@@ -1,7 +1,7 @@
 import { createAsyncThunk, createSlice } from "@reduxjs/toolkit";
 import handelDataFetch from "../../utils/handelDataFetch";
 import { userLogoutAsync } from "../auth/authSlice";
-import { handelImageUploadNurseryHeader, handelImageUploadNurseryStore, handelAddNewPlantToNursery, handelAddNewBlockToNursery, handelFetchDataWithImages } from "./nurseryAPI";
+import { handelImageUploadNurseryHeader, handelImageUploadNurseryStore, handelAddNewPlantToNursery, handelFetchDataWithImages } from "./nurseryAPI";
 import { message } from "antd";
 import ObjectArraySet from "../../utils/ObjectArraySet ";
 
@@ -655,7 +655,7 @@ export const nurserySlice = createSlice({
                 const templateIndex = nurseryStoreTemplatesSetData.items.findIndex(template => template.index === index);
 
                 //* IF THE TEMPLATE FOUND, UPDATE THE INDEX...
-                if (templateIndex != -1) {
+                if (templateIndex !== -1) {
                     nurseryStoreTemplatesSetData.items = nurseryStoreTemplatesSetData.items.map(template => {
                         if (template.index >= index) {
                             template.index += 1;

@@ -1,5 +1,4 @@
 import React, { useState } from 'react';
-import { useSelector } from 'react-redux';
 import AlertPopOver from '../../../common/AlertPopOver';
 import { Link } from 'react-router-dom';
 import useUserData from '../../../../hooks/useUserData';

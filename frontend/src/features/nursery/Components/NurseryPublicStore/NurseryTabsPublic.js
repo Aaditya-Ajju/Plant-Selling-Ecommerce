@@ -23,6 +23,7 @@ const NurseryTabsPublic = ({_id, isCurrentTab, setIsCurrentTab, setCurrentTabDyn
     if(!nurseryPublicStoreTabs || nurseryPublicStoreTabs.length === 0) {
       dispatch(nurseryPublicStoreGetPublishTabs(_id));
     }
+  // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [nurseryPublicStoreTabsAll]);
 
   const handelChangeCurrentTab = (query) => {

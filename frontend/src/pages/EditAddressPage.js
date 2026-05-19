@@ -31,7 +31,7 @@ const EditAddressPage = () => {
     return () => {
       dispatch(addressResetApiState());
     }
-  }, [address, dispatch, id, navigate, user]) 
+  }, [address, dispatch, id, navigate, user])
 
   return (
     address && <EditAddress />

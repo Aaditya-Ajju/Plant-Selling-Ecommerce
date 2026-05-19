@@ -15,7 +15,7 @@ const NurseryStoreAllProducts = ({nurseryPublicStore}) => {
 
     useEffect(() => {
         products && !products.length && dispatch(getAllProductsAsync());
-    }, [products]);
+    }, [products, dispatch]);
 
     const nurseryProduct = products.filter(p => p.nursery._id === nurseryPublicStore._id);
 

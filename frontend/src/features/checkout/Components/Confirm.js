@@ -1,8 +1,8 @@
-import React, { useEffect, useState } from 'react'
+import React, { useEffect } from 'react'
 import { Link, useNavigate } from 'react-router-dom';
 import { Steps, message } from 'antd';
 import { useDispatch, useSelector } from 'react-redux';
-import { getConfirmOrderDataAsync, getSelectedShippingAsync, getValidateCheckoutAsync } from '../checkoutSlice';
+import { getConfirmOrderDataAsync, getValidateCheckoutAsync } from '../checkoutSlice';
 
 
 
@@ -28,10 +28,12 @@ const Confirm = () => {
 
     useEffect(() => {
         handelValidateOrder();
+    // eslint-disable-next-line react-hooks/exhaustive-deps
     }, [isSessionError])
 
     useEffect(() => {
         !checkoutCart.length && dispatch(getConfirmOrderDataAsync());
+    // eslint-disable-next-line react-hooks/exhaustive-deps
     }, [checkoutCart])
     
 

@@ -3,7 +3,7 @@ import { useDispatch, useSelector } from 'react-redux';
 import TabsViewEditing from './NurseryTab/TabsViewEditing';
 import TabsViewSaved from './NurseryTab/TabsViewSaved';
 import Info from './NurseryTab/Info';
-import { nurseryProfileAsync, nurseryStoreDataAsync, nurseryStoreTabsGetAllAsync, nurseryStoreTemplatesGetAllAsync, nurseryStoreBlocksGetAllAsync } from '../nurserySlice';
+import { nurseryProfileAsync, nurseryStoreTabsGetAllAsync } from '../nurserySlice';
 import NurseryTabs from './NurseryTabs';
 
 const NurseryMain = ({ isCollapseSideNav }) => {
@@ -11,7 +11,6 @@ const NurseryMain = ({ isCollapseSideNav }) => {
     const nursery = useSelector(state => state.nursery.nursery);
     const nurseryStoreTabs = useSelector(state => state.nursery.nurseryStoreTabs);
     const nurseryStoreTemplates = useSelector(state => state.nursery.nurseryStoreTemplates);
-    const nurseryStoreBlocks = useSelector(state => state.nursery.nurseryStoreBlocks);
     const isCurrentTab = useSelector(state => state.nursery.isCurrentTab);
 
     const dispatch = useDispatch();
@@ -19,7 +18,7 @@ const NurseryMain = ({ isCollapseSideNav }) => {
     useEffect(() => {
         !nursery && dispatch(nurseryProfileAsync());
         nursery && dispatch(nurseryStoreTabsGetAllAsync());
-    }, []);
+    }, [dispatch, nursery]);
 
     const [nurseryStoreTabsSelected] = nurseryStoreTabs && nurseryStoreTabs.filter(elem => elem._id.toLocaleLowerCase() === isCurrentTab.toLocaleLowerCase());
 

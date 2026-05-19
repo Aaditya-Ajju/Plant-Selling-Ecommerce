@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import React, { useEffect } from 'react';
 import { Rating } from 'react-simple-star-rating';
 import { Link, useLocation, useNavigate } from 'react-router-dom';
 import { useDispatch, useSelector } from 'react-redux';
@@ -37,6 +37,7 @@ const Products = () => {
             // Case 4: /products/?search='some keyword'&category='some category'
             dispatch(searchProductsAsync({ search: searchKeyword, category }));
         }
+    // eslint-disable-next-line react-hooks/exhaustive-deps
     }, [location.search, dispatch]);
 
     const handelSearchProductsByCategory = (category) => {
