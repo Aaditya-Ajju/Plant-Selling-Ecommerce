@@ -157,8 +157,6 @@ export const nurseryStoreTemplatesChangeRenderPositionByTabsIdAsync = createAsyn
     data: { pre: index, next: index}
 */
 export const deleteNurseryStoreTemplatesAsync = createAsyncThunk('/nursery/store/template/delete', async (id) => {
-    console.log(id);
-
     const response = await handelDataFetch(`/api/v2/nursery/store/template/${id}`, 'DELETE');
     return response.data;
 });

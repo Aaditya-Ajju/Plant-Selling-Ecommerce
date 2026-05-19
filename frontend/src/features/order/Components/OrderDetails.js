@@ -7,8 +7,6 @@ const OrderDetails = () => {
 
     const orderDetails = useSelector((order) => order.order.orderDetails);
 
-    console.log("orderDetails" + orderDetails);
-
     const dispatch = useDispatch();
 
     const noPlantsImage = "https://res.cloudinary.com/dcd6y2awx/image/upload/f_auto,q_auto/v1/PlantSeller/UI%20Images/no-data-found";

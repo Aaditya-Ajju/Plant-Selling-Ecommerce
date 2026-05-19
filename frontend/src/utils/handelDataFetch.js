@@ -97,10 +97,6 @@ const handelDataFetch = async (path, method, body) => {
                 const accessToken = localStorageUtil.getData("accessToken");
                 const orderToken = localStorageUtil.getData("orderToken");
 
-                console.log("handelDataFetch - Path:", path);
-                console.log("handelDataFetch - Access Token:", accessToken);
-                console.log("handelDataFetch - Order Token:", orderToken);
-
                 // Initialize headers object
                 const headers = {
                     "Content-Type": "application/json",
@@ -123,8 +119,6 @@ const handelDataFetch = async (path, method, body) => {
                         }
                     }
                 }
-
-                console.log("handelDataFetch - Final Headers:", headers);
 
                 const res = await fetch(apiUrl, {
                     method,

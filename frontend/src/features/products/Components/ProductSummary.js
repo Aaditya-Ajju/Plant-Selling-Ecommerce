@@ -103,7 +103,6 @@ const ProductSummary = () => {
 
     const handleUpdateCart = () => {
         if (cart) {
-            console.log("cart " + cart);
             dispatch(cartDataUpdateQuantityAsync({ cartId: cart._id, quantity: cartQuantity }));
         } else {
             message.error("Plant not added into the cart.")
