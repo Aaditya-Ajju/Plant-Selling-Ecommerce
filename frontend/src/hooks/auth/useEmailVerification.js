@@ -1,4 +1,4 @@
-import React, { useEffect, useMemo } from 'react'
+import { useEffect, useMemo } from 'react'
 import useAuthData from './useAuthData';
 
 const useEmailVerification = (token) => {
@@ -12,7 +12,7 @@ const useEmailVerification = (token) => {
 
     useEffect(() => {
         validateVerificationToken(token);
-    }, []);
+    }, [token, validateVerificationToken]);
 
 
     return {isLoading, verificationCompleted, isValidToken, userAccountVerification}

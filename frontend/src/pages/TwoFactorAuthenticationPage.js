@@ -1,5 +1,4 @@
 import  { useState, useEffect } from "react";
-import { useDispatch, } from "react-redux";
 import { Navigate, useNavigate, useParams } from "react-router-dom";
 import useTwoFactorAuthVerification from "../hooks/auth/useTwoFactorAuthVerification";
 import { message } from "antd";
@@ -73,7 +72,7 @@ const TwoFactorAuthenticationPage = () => {
 
         return () => clearTimeout(validateTokenInterval);
 
-    }, [isValidTokenTwoFactor, isOtpValidationDone, isOtpResendSuccessful]);
+    }, [isValidTokenTwoFactor, isOtpValidationDone, isOtpResendSuccessful, token, validateTwoFactorAuthToken]);
 
 
     if (isOtpValidationDone) {

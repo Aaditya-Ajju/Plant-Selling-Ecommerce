@@ -21,7 +21,7 @@ const EditNurseryPage = () => {
       }
     }
 
-  }, [user, nursery]);
+  }, [user, nursery, navigate]);
 
   return (
     nursery && <EditNursery />

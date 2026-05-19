@@ -1,6 +1,5 @@
-import { useEffect, useMemo, useState } from 'react'
+import { useEffect, useMemo } from 'react'
 import useAuthData from './useAuthData';
-import { useNavigate } from 'react-router-dom';
 
 const useUserLogout = () => {
   const { auth, userLogout } = useAuthData();
@@ -11,7 +10,7 @@ const useUserLogout = () => {
     if (token) {
       userLogout(); // Trigger logout side-effect (e.g., clear state, redirect, notify)
     }
-  }, []);
+  }, [userLogout]);
 
   return { isLoading };
 }

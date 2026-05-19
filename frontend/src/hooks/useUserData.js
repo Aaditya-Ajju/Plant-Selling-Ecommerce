@@ -1,6 +1,6 @@
 import { useDispatch, useSelector } from 'react-redux';
 
-import { useCallback, useEffect, useMemo } from 'react';
+import { useCallback, useEffect } from 'react';
 import { userProfileAsync, userProfileChangePasswordAsync, userProfileChangeTwoFactorAuthenticationStatusAsync, userProfileDeleteAsync, userProfileImagesUpload, userProfileUpdateAsync } from '../features/user/userSlice';
 
 const useUserData = () => {
@@ -15,7 +15,7 @@ const useUserData = () => {
     if (userData === null && errorData === null) {
       dispatch(userProfileAsync());
     }
-  }, [dispatch, userData]);
+  }, [dispatch, userData, errorData]);
 
   // update-data....
   const updateUserData = useCallback((data) => {
@@ -54,7 +54,7 @@ const useUserData = () => {
     if(userData === null || !userData) {
       getUserData();
     }
-  }, [getUserData]);
+  }, [getUserData, userData]);
 
   return {isLoading, isError: !!errorData, errorData, userData, IsUserDataFetchedError, updateUserData, deleteUserData, changeUserPassword, enableDisableTwoFactorStatus, avatarImageUpload};
 }

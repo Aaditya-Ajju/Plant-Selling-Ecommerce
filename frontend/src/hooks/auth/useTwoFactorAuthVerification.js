@@ -1,4 +1,4 @@
-import React, { useEffect, useMemo } from 'react'
+import { useEffect, useMemo } from 'react'
 import useAuthData from './useAuthData';
 
 const useTwoFactorAuthVerification = (token) => {
@@ -13,7 +13,7 @@ const useTwoFactorAuthVerification = (token) => {
 
     useEffect(() => {
         validateTwoFactorAuthToken(token);
-    }, [])
+    }, [token, validateTwoFactorAuthToken])
 
     return { isLoading, isError, errorData, isOtpResendSuccessful, isOtpValidationDone, isValidTokenTwoFactor, validateTwoFactorAuthToken, validateTwoFactorAuth, resendOtpTwoFactorAuth }
 }

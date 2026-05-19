@@ -21,7 +21,7 @@ const CreateNurseryPage = () => {
             }
         }
         
-    }, [user, nursery]);
+    }, [user, nursery, navigate]);
 
 
     return (

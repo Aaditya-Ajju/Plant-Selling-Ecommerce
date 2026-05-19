@@ -1,6 +1,5 @@
 import React, { useEffect } from 'react'
 import Address from '../features/address/Components/Address'
-import { useSelector } from 'react-redux';
 import { useNavigate } from 'react-router-dom';
 import useUserData from '../hooks/useUserData';
 
@@ -14,7 +13,7 @@ const AddressPage = () => {
     if(!user) {
       navigate("/login?redirect=/address");
     }
-  }, [])
+  }, [navigate, user])
 
   return (
     user && <Address />

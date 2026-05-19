@@ -1,4 +1,4 @@
-import React, { useEffect, useMemo } from 'react'
+import { useEffect, useMemo } from 'react'
 import useAuthData from './useAuthData';
 
 const useResetPassword = (token) => {
@@ -10,7 +10,7 @@ const useResetPassword = (token) => {
 
     useEffect(() => {
         validatePasswordResetToken(token);
-    }, []);
+    }, [token, validatePasswordResetToken]);
 
     return {isLoading, isValidTokenPassword, passwordChangeSuccessful, validatePasswordResetToken, validatePasswordReset}
 }

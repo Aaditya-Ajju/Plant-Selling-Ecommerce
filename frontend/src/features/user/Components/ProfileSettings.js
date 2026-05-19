@@ -1,15 +1,11 @@
 import { Breadcrumb, message } from "antd";
 import React, { useState } from "react";
-import { useDispatch, useSelector } from "react-redux";
 import { Link } from "react-router-dom";
-import { userProfileChangePasswordAsync, userProfileChangeTwoFactorAuthenticationStatusAsync, userProfileDeleteAsync } from "../userSlice";
 import useUserData from "../../../hooks/useUserData";
 
 const ProfileSettings = () => {
     const { userData:user, deleteUserData: handleDeleteAccount, changeUserPassword, enableDisableTwoFactorStatus} = useUserData();
-    const dispatch = useDispatch();
 
-    // State for managing password change
     const [previousPassword, setPreviousPassword] = useState("");
     const [password, setPassword] = useState("");
     const [confirmPassword, setConfirmPassword] = useState("");

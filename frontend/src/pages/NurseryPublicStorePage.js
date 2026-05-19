@@ -1,11 +1,9 @@
 import React, { useEffect, useState } from 'react'
 import { useDispatch, useSelector } from 'react-redux';
-import TabsViewSaved from '../features/nursery/Components/NurseryTab/TabsViewSaved'
 import NurseryHeaderPublic from '../features/nursery/Components/NurseryPublicStore/NurseryHeaderPublic';
-// import NurseryStoreView from '../features/nursery/Components/NurseryPublicStore/NurseryStoreView'
 import NurseryTabsPublic from '../features/nursery/Components/NurseryPublicStore/NurseryTabsPublic';
 import NurseryStoreAllProducts from '../features/nursery/Components/NurseryPublicStore/NurseryStoreAllProducts';
-import { nurseryPublicStoreDetails, nurseryPublicStoreGetPublishTabs } from '../features/nursery/nurseryPublicStoreSlice';
+import { nurseryPublicStoreDetails } from '../features/nursery/nurseryPublicStoreSlice';
 import { useParams } from 'react-router-dom';
 import Error404 from './Error404Page';
 import NurseryStoreContactUs from '../features/nursery/Components/NurseryPublicStore/NurseryStoreContactUs';
@@ -32,17 +30,17 @@ const NurseryPublicStorePage = () => {
     if (!nurseryPublicStoresDetails || nurseryPublicStoresDetails.length === 0 || !nurseryPublicStore) {
       dispatch(nurseryPublicStoreDetails(_id));
     }
-  }, []);
+  }, [_id, dispatch, nurseryPublicStore, nurseryPublicStoresDetails]);
 
   let render;
 
-  if (isCurrentTab.toLocaleLowerCase() == "products") {
+  if (isCurrentTab.toLocaleLowerCase() === "products") {
     render = <NurseryStoreAllProducts nurseryPublicStore={nurseryPublicStore} />
   }
   // else if (isCurrentTab.toLowerCase() === "aboutus") {
   //   render = <div>About Us</div>
   // }
-  else if (isCurrentTab.toLowerCase() == "contactus") {
+  else if (isCurrentTab.toLowerCase() === "contactus") {
     render = <NurseryStoreContactUs nurseryPublicStore={nurseryPublicStore} />
   }
   else {

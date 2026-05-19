@@ -1,9 +1,6 @@
-import React, { useEffect } from 'react'
+import React from 'react'
 import Signup from '../features/auth/Components/Signup';
-import { useDispatch, useSelector } from 'react-redux';
-import { Navigate, useLocation, useNavigate } from 'react-router-dom';
-import { userProfileAsync } from '../features/user/userSlice';
-import { resetState } from '../features/auth/authSlice'
+import { Navigate, useLocation } from 'react-router-dom';
 import useUserData from '../hooks/useUserData';
 import Animation from '../features/common/Animation';
 import useUserSignup from '../hooks/auth/useUserSignup';

@@ -20,7 +20,7 @@ const ProductPage = () => {
 
   useEffect(() => {
     dispatch(getProductAsync(_id));
-  }, []);
+  }, [_id, dispatch]);
 
   return (
     <>

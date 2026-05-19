@@ -13,17 +13,17 @@ const NurseryProfilePage = () => {
 
   const navigate = useNavigate();
 
-  document.title = nursery && nursery.nurseryName || "Manage Your Nursery";
+  document.title = (nursery && nursery.nurseryName) || "Manage Your Nursery";
 
 
   useEffect(() => {
     !nursery && dispatch(nurseryProfileAsync())
-  }, [dispatch])
+  }, [dispatch, nursery])
 
   useEffect(() => {
     if (error) navigate('/profile');
     error && message.error(error.message);
-  }, [dispatch, error]);
+  }, [dispatch, error, navigate]);
 
 
 

@@ -1,6 +1,6 @@
 import { createAsyncThunk, createSlice } from '@reduxjs/toolkit'
 import handelDataFetch from '../../utils/handelDataFetch';
-import { userLoginAsync, userSignupAsync, userLogoutAsync, validateTwoFactorAuthAsync } from '../auth/authSlice';
+import { userLoginAsync, userLogoutAsync, validateTwoFactorAuthAsync } from '../auth/authSlice';
 import { nurseryCreateAsync } from '../nursery/nurserySlice';
 import { handelImageUploadProfileAvatar } from './userAPI';
 import { message } from 'antd';
